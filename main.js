@@ -3,7 +3,6 @@ document.getElementById('search').addEventListener("click", function(){
     fetch('https://api.lyrics.ovh/suggest/'+songName)
     .then(response => response.json())
     .then(data => {
-        console.log(data);
         titleNameGet("title_0", "name_0", "get_0", 0);
         titleNameGet("title_1", "name_1", "get_1", 1);
         titleNameGet("title_2", "name_2", "get_2", 2);
@@ -23,7 +22,6 @@ document.getElementById('search').addEventListener("click", function(){
                 fetch("https://api.lyrics.ovh/v1/"+data.data[No].artist.name+"/"+data.data[No].title)
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
                     document.getElementById("lyricsText").innerText = data.lyrics;
                 })
             })
